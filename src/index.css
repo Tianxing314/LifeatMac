@@ -128,3 +128,36 @@ label.MuiFormControlLabel-root {
 .grey_light_text {
   color: #E6E6E6;
 }
+
+/*text size*/
+.activity_normal_title {
+  font-size: 16px;
+}
+
+.activity_normal_content {
+  font-size: 12px;
+}
+
+.activity_accessibility_title {
+  font-size: 18px;
+}
+
+.activity_accessibility_content {
+  font-size: 14px;
+}
+
+.normal_title {
+  font-size: 19px;
+}
+
+.normal_content {
+  font-size: 16px;
+}
+
+.accessibility_title {
+  font-size: 21px;
+}
+
+.accessibility_content {
+  font-size: 18px;
+}

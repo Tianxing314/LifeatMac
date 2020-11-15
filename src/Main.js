@@ -15,7 +15,7 @@ import Modal from '@material-ui/core/Modal';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-import Button from '@material-ui/core/Button';
+import { Button } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -30,9 +30,8 @@ class Main extends Component {
   }
   render() {
     var accessibility_class = "";
-    if (this.state.colorblind && this.state.larger_text) accessibility_class="colorblind larger_text";
-    else if (this.state.colorblind) accessibility_class="colorblind";
-    else if (this.state.larger_text) accessibility_class="larger_text";
+    if (this.state.colorblind) accessibility_class="colorblind";
+
     return (
       <Router>
         <div className={accessibility_class}>
@@ -69,7 +68,7 @@ class Main extends Component {
                           color="secondary" 
                           onChange={event => this.setState({colorblind: event.target.checked})}
                          />}
-                label="Colorblind Mode"
+                label="Color Blind Mode"
                 labelPlacement="end"
               />
               <FormControlLabel
@@ -93,19 +92,19 @@ class Main extends Component {
           <div className="content">
             <Switch>
               <Route exact path="/">
-                <Academics/>
+                <Academics larger_text={this.state.larger_text}/>
               </Route>
               <Route path="/activities">
-                <Activities/>
+                <Activities larger_text={this.state.larger_text}/>
               </Route>
               <Route path="/forum">
-                <Forum/>
+                <Forum larger_text={this.state.larger_text}/>
               </Route>
               <Route path="/job_board">
-                <Jobboard/>
+                <Jobboard larger_text={this.state.larger_text}/>
               </Route>
               <Route path="/change_mac">
-                <Changemac/>
+                <Changemac larger_text={this.state.larger_text}/>
               </Route>
             </Switch>
              

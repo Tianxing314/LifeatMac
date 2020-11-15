@@ -127,13 +127,20 @@ class Activities extends Component {
 
     var trending_list = activity_posts.slice(0, 8);
 
+    var title = "activity_normal_title";
+    var content = "activity_normal_content";
+    if (this.props.larger_text) {
+      title = "activity_accessibility_title";
+      content = "activity_accessibility_content";
+    }
+
     return (
       <div>
         <AliceCarousel disableSlideInfo="false" autoPlay autoPlayInterval="2500" infinite="true" disableButtonsControls="true">
       		<div className="sliderimg">
             <img src={sld_image1} className="sliderimg"/>
             <h2> 
-              <span>Hamilton Food Festival Tonigt</span>
+              <span>Hamilton Food Festival Tonight</span>
             </h2> 
           </div>
           <div className="sliderimg">
@@ -156,7 +163,7 @@ class Activities extends Component {
           </div>
         </AliceCarousel>
         <div className="activity_board">
-          <ul className="options grey_light_background">
+          <ul className="options">
             <li className="date_picker">
               <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <KeyboardDatePicker
@@ -220,11 +227,11 @@ class Activities extends Component {
               (activity) =>
               <div className="activity grey_light_background">
                 <img src={activity.image}/>
-                <h1>{activity.title}</h1>
-                <div className="activity_description">
+                <h1 className={`blue_heavy_text ${title}`}>{activity.title}</h1>
+                <div className={`activity_description blue_heavy_text ${content}`}>
                   {activity.description}
                 </div>
-                <div className="activity_time blue_heavy_text">
+                <div className={`activity_time blue_heavy_text ${content}`}>
                   Activity time: <br/>
                   {activity.date.getFullYear()}/
                   {months[activity.date.getMonth()]}/
