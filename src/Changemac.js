@@ -39,7 +39,7 @@ class Changemac extends Component {
 	}
 
 	submit(input,input2,input3){
-	  if (input!== "" && input.length > 0 && input2.length>0 && input2!=="" && input3!==""){
+	  if (input!== "" && input.length > 0 && input2.length>0 && input2!=="" && input3!=="" && input3>0){
 	      this.setState({ 
 	        nextID: this.state.nextID + 1,
 	        input: "",
@@ -51,7 +51,7 @@ class Changemac extends Component {
 	              {photo: this.state.previewSrc, category: this.state.type, des: this.state.input2, title: this.state.input, supporter: this.state.input3, id1: this.state.nextID + 1}]     
 	      })
 	   }else{
-	   		alert("Please fill in the required fields.");
+	   		alert("Please fill in the required fields and make sure your supporters goal is a positive number.");
 	   }
 
 	    	    
@@ -192,8 +192,9 @@ class Changemac extends Component {
 						        type="number"
 						        required
 						        fullWidth
+						        InputProps={{ inputProps: { min: 0 } }}
 						        InputLabelProps={{
-						          shrink: true,
+						          shrink: true,						          
 						        }} 
 						      	onChange={(event) => this.setState({input3: event.target.value})} value={this.state.input3}/>
 						  </div>
