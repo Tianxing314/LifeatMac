@@ -56,7 +56,7 @@ class Forum extends Component {
                     title: "Anybody looking for a lab partner in SFWRENG 3DX4?",
                     content: "Anyone in LAB03? ",
                     author: "Anna Chung",
-                    date: new Date('2020','08','28'),
+                    date: new Date('2020','08','26'),
                     type: "Engineering",
                   },
                   {
