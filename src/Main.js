@@ -68,7 +68,7 @@ class Main extends Component {
                           color="secondary" 
                           onChange={event => this.setState({colorblind: event.target.checked})}
                          />}
-                label="Color Blind Mode"
+                label="Grayscale Mode"
                 labelPlacement="end"
               />
               <FormControlLabel
