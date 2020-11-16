@@ -165,7 +165,7 @@ class Forum extends Component {
   }
   close_details(){
     this.setState({
-      current_thread_state: false
+      current_thread_state: false,
     })
   }
   anonymousonClick(){
@@ -279,7 +279,7 @@ class Forum extends Component {
             </div>
             
           </ul>
-          <Dialog fullWidth open={this.state.create_thread} onClose={()=>this.setState({create_thread:false})} aria-labelledby="form-dialog-title">
+          <Dialog fullWidth open={this.state.create_thread} onClose={()=>this.setState({create_thread:false,create_title:"",create_author:"",create_date:"",create_type:"All",create_content: "",})} aria-labelledby="form-dialog-title">
                 <DialogTitle id="form-dialog-title">Create a new thread</DialogTitle>
                   <form>
                     <DialogContent>
@@ -343,7 +343,7 @@ class Forum extends Component {
                       Anonymous
                     </DialogContent>
                     <DialogActions>
-                    <Button variant="outlined" onClick={()=>this.setState({create_thread:false})} color="primary">
+                    <Button variant="outlined" onClick={()=>this.setState({create_thread:false,create_title:"",create_author:"",create_date:"",create_type:"All",create_content: "",})} color="primary">
                       Cancel
                     </Button>
                     <Button className="blue_heavy_background" variant="contained" type="submit" onClick={this.submit.bind(this)} color="primary">
