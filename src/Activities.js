@@ -48,49 +48,49 @@ const months = ['01', '02', '03','04','05','06','07','08','09','10','11','12',];
 const activity_posts = [{title: "LIVE: 2020 NHL Draft",
                          description: "LIVE on Youtube: https://www.youtube.com/watch?v=demolink",
                          date: new Date(2020, 11, 31, 13, 30),
-                         type: "Sports",
+                         type: "sports",
                          image: sport1
                         },
                         {title: "Baseball Charity Round",
                          description: "Ticket selling will be donated to children lost their parents during COVID-19",
                          date: new Date(2020, 10, 29, 20, 30),
-                         type: "Sports",
+                         type: "sports",
                          image: sport2
                         },
                         {title: "Badminton Team Tryouts",
                          description: "Apply by email: badminton@mcmaster.ca",
                          date: new Date(2020, 10, 28, 13, 30),
-                         type: "Sports",
+                         type: "sports",
                          image: sport3
                         },
                         {title: "Open Gym: Basketball",
                          description: "8 half-courts will be set up. Please feel free to drop in!",
                          date: new Date(2020, 11, 15, 20, 45),
-                         type: "Food",
+                         type: "food",
                          image: sport4
                         },
                         {title: "Hamilton Carnival",
                          description: "Hamilton's biggest food festival. All-meat buffet start from $20 only!",
                          date: new Date(2020, 11, 30, 19, 30),
-                         type: "Food",
+                         type: "food",
                          image: food1
                         },
                         {title: "Popeyes New Sandwich",
                          description: "Come and try the new Chicken Sandwich at Popeyes! This weekend ONLY",
                          date: new Date(2020, 11, 25, 12, 25),
-                         type: "Food",
+                         type: "food",
                          image: food2
                         },
                         {title: "Club Fair 2020",
                          description: "The best opportunity to find people with same interest as you! Don't hesitate to come!",
                          date: new Date(2020, 10, 30, 9, 30),
-                         type: "Clubs",
+                         type: "clubs",
                          image: club1
                         },
                         {title: "Ourdoor Club Event",
                          description: "Banff backcpuntry camping with professional hicking team. Apply before December 23.",
                          date: new Date(2020, 11, 22, 8, 30),
-                         type: "Clubs",
+                         type: "clubs",
                          image: club2
                         }]
 
@@ -118,9 +118,9 @@ class Activities extends Component {
     toshow = toshow.filter(activity => (activity.date.getTime() >= this.state.selectedStartDate.getTime()));
     if (this.state.selectedEndDate) toshow = toshow.filter(activity => (activity.date.getTime() <= this.state.selectedEndDate.getTime()));
 
-    if (this.state.type == "Sports") toshow = toshow.filter(activity => (activity.type=="Sports"));
-    if (this.state.type == "Clubs") toshow = toshow.filter(activity => (activity.type=="Clubs"));
-    if (this.state.type == "Food") toshow = toshow.filter(activity => (activity.type=="Food"));
+    if (this.state.type == "sports") toshow = toshow.filter(activity => (activity.type=="sports"));
+    if (this.state.type == "clubs") toshow = toshow.filter(activity => (activity.type=="clubs"));
+    if (this.state.type == "food") toshow = toshow.filter(activity => (activity.type=="food"));
 
     if (this.state.order === "latest") toshow = toshow.slice().sort((a, b) => b.date - a.date);
     if (this.state.order === "oldest") toshow = toshow.slice().sort((a, b) => a.date - b.date);
