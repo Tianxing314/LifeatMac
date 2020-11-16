@@ -131,7 +131,13 @@ class Academics extends Component {
 	}
 	close_workshop(){
 		this.setState({
-			nw_state: false
+			nw_state: false,
+			title: "", 
+			desc: "", 
+			email: "", 
+			location: "", 
+			pst_date: "", 
+			image: null
 		})
 	}
 	open_join(){
@@ -141,7 +147,9 @@ class Academics extends Component {
 	}
 	cancel_join(){
 		this.setState({
-			post_state: false
+			post_state: false,
+			joined_name: "",
+			joined_email: ""
 		})
 	}
 	open_post_msg(new_workshop){
