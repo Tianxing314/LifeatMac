@@ -100,7 +100,7 @@ class Activities extends Component {
     this.state = {selectedStartDate:new Date(),
                   selectedEndDate:null,
                   type: "all",
-                  order: "latest",
+                  order: "oldest",
                   trending_dialog: false,
                   current_activity: {title: "",
                                      description: "",
@@ -108,9 +108,6 @@ class Activities extends Component {
                                      type: ""
                                     }};
   }
-
-  
-  changeType(new_type) {this.setState({type: new_type});}
 
   render() {
 
@@ -194,7 +191,7 @@ class Activities extends Component {
                 />
               </MuiPickersUtilsProvider>
             </li>
-            <li className="menu">
+            <li className="activities_type">
               <FormControl>
                 <InputLabel>Type</InputLabel>
                 <Select
@@ -208,15 +205,15 @@ class Activities extends Component {
                 </Select>
               </FormControl>
             </li>
-            <li className="menu">
+            <li className="activities_sort">
               <FormControl>
-                <InputLabel>Sort by</InputLabel>
+                <InputLabel>Sort by time</InputLabel>
                 <Select
                   value={this.state.order}
                   onChange={event => this.setState({order:event.target.value})}
                 >
-                  <MenuItem value={"latest"}>Latest</MenuItem>
-                  <MenuItem value={"oldest"}>Oldest</MenuItem>
+                  <MenuItem value={"latest"}>Decreasing</MenuItem>
+                  <MenuItem value={"oldest"}>Increasing</MenuItem>
                 </Select>
               </FormControl>
             </li>
